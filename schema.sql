@@ -37,5 +37,27 @@ CREATE TABLE IF NOT EXISTS routes (
     ON UPDATE RESTRICT
 );
 
+--Inserting 20 airports into the "airports" table
+INSERT INTO airports (name, code, state, country) VALUES
+('Hartsfield-Jackson Atlanta International Airport', 'ATL', 'Georgia', 'USA'),
+('Indira Gandhi International Airport', 'DEL', 'Delhi', 'India'),
+('John F. Kennedy International Airport', 'JFK', 'New York', 'USA'),
+('London Heathrow Airport', 'LHR', 'England', 'UK'),
+('Paris Charles de Gaulle Airport', 'CDG', 'Île-de-France', 'France'),
+('Tokyo Haneda Airport', 'HND', 'Tokyo', 'Japan'),
+('Dubai International Airport', 'DXB', 'Dubai', 'UAE'),
+('Singapore Changi Airport', 'SIN', 'Singapore', 'Singapore'),
+('Sydney Kingsford Smith Airport', 'SYD', 'New South Wales', 'Australia'),
+('Frankfurt Airport', 'FRA', 'Hesse', 'Germany'),
+('Amsterdam Airport Schiphol', 'AMS', 'North Holland', 'Netherlands'),
+('Incheon International Airport','ICN', 'Incheon', 'South Korea'),
+('Hong Kong International Airport', 'HKG', 'Hong Kong', 'China'),
+('Istanbul Airport', 'IST', 'Istanbul', 'Turkey'),
+('Toronto Pearson International Airport', 'YYZ', 'Ontario', 'Canada'),
+('O''Hare International Airport', 'ORD', 'Illinois', 'USA'),
+('Dallas/Fort Worth International Airport', 'DFW', 'Texas', 'USA'),
+('Hamad International Airport', 'DOH', 'Doha', 'Qatar'),
+('Suvarnabhumi Airport', 'BKK', 'Bangkok', 'Thailand'),
+('Leonardo da Vinci–Fiumicino Airport', 'FCO', 'Lazio', 'Italy');
 
     
