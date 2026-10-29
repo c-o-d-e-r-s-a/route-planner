@@ -26,13 +26,18 @@ ON mytable.destination_airport_id = airports.id;
 
 #Saving the queries results in flight_data (This contains FromAirportCode, ToAirportCode, and the time)
 flight_data = cursor.fetchall()
+flights_dict = {}
 
-result = ""
-
+#Now we will make a dictionary of the from_airport_code as the key and the all available airports and times (tuples) as keys
+#We have a list of tuples with 3 indexes in each
 for row in flight_data:
-    result += ", ".join(map(str, row)) + "\n"
+    if row[0] in flights_dict:
+        flights_dict[row[0]].append((row[1], row[2]))
+    else:
+        flights_dict[row[0]] = [(row[1], row[2])]
 
-print(result)
+print(flights_dict)
+
 
 cursor.close()
 connection.close()
