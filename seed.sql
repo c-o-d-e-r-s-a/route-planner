@@ -7,7 +7,7 @@
 PRAGMA foreign_keys = ON;
 
 -- Insert 20 major airports in alphabetical order by code
-INSERT INTO airports (name, code, state, country) VALUES
+INSERT INTO airports (name, code) VALUES
 ('Albuquerque International Sunport', 'ABQ'),
 ('Hartsfield-Jackson Atlanta International Airport', 'ATL'),
 ('Birmingham-Shuttlesworth International Airport', 'BHM'),
@@ -15,7 +15,7 @@ INSERT INTO airports (name, code, state, country) VALUES
 ('Charleston International Airport', 'CHS'),
 ('Ronald Reagan Washington National Airport', 'DCA'),
 ('Denver International Airport', 'DEN'),
-('Dallas/Fort Worth International Airport'),
+('Dallas/Fort Worth International Airport', 'DFW'),
 ('Wichita Dwight D. Eisenhower National Airport', 'ICT'),
 ('Indianapolis International Airport', 'IND'),
 ('John F. Kennedy International Airport', 'JFK'),
