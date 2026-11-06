@@ -1,0 +1,15 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# SQLite temporary journal and WAL files
+*.db-journal
+*.db-wal
+*.db-shm
