@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS airports (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
     code TEXT NOT NULL UNIQUE CHECK(LENGTH(code) = 3)
-);
+) STRICT;
 
 -- 3. ROUTES TABLE (Dependent)
 CREATE TABLE IF NOT EXISTS routes (
@@ -35,4 +35,4 @@ CREATE TABLE IF NOT EXISTS routes (
     FOREIGN KEY (destination_airport_id) REFERENCES airports(id)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT
-);
+) STRICT;
