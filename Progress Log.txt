@@ -1,0 +1,31 @@
+Source for route planning: https://www.greatcirclemap.com/?routes=ATL-LAX%2C%20ATL-DFW%2C%20DFW-LAX%2C%20DFW-MSP%2C%20DFW-DEN%2C%20DEN-MSP%2C%20JFK-DEN%2C%20DEN-LAX%2C%20JFK-ABQ%2C%20ABQ-LAX%2C%20DFW-BHM%2C%20BHM-SDF%2C%20DFW-ORD%2C%20ORD-SDF%2C%20MCO-CHS%2C%20CHS-MSP%2C%20MCO-ICT%2C%20ICT-MSP%2C%20ICT-SDF%2C%20ICT-BNA%2C%20BNA-SDF%2C%20LAS-MSP%2C%20MSP-ORD%2C%20LAS-LIT%2C%20LIT-ORD%2C%20SEA-ICT%2C%20SEA-DEN%2C%20DEN-ICT%2C%20JFK-DCA%2C%20DCA-BNA%2C%20JFK-IND%2C%20IND-BNA
+
+Date: Oct 29, 2026
+
+Milestone / branch: M0 done. Now on feature/db-schema (main merged in)
+Done: .gitignore, README stub, planner/ and tests/ skeleton (.gitkeep), PR #1 merged, main merged into db-schema
+Stuck on: nothing yet.
+Decisions made (and why): distance as weight, since time depends on layovers and delays. Merge over rebase, since the branch was already pushed
+Next step: Part 2, plan the dataset on paper (airports, routes, source)
+
+Date: Nov 4, 2026
+Milestone / branch: M1 (schema and data), feature/db-schema
+Done: Rewrote schema.sql (id, name, code; routes with distance_km, CHECKs, UNIQUE pair, smaller id first). Rewrote seed.sql (20 airports, 32 routes, SFO has none). Deleted planner.db and rebuilt. LEFT JOIN query for airports with no routes returns only SFO.
+Stuck on: nothing right now
+Decisions made (and why):
+- Routes stored once and treated as two-way. The graph loader will add both directions.
+- Smaller id first, with UNIQUE on the pair, so each pair has one legal spelling.
+- RESTRICT on city delete, because the CLI has no remove-city.
+- distance_km as INTEGER, since the source gives whole km.
+- Distance is the weight, since time depends on layovers and delays.
+- Network is illustrative, not real flights. Distances from Great Circle Map.
+- Rebuild from scratch during development.
+Next step: break-it tests in the shell, other 4 Milestone 1 queries, PR
+
+Date: Nov 5, 2026
+Milestone / branch: M1 (schema and data), feature/db-schema
+Done: Wrote useful queries in queries.sql, tests in test.sql, merged feature/db-schema to main
+Stuck on: nothing right now
+Decisions made (and why):
+- Turned on STRICT in both tables in Schema to keep data type consistent
+Next step: Write python script to handle data from db and implement dijkstra
